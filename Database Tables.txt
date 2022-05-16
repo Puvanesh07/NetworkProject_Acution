@@ -1,0 +1,5 @@
+create table selling(name varchar(50),sellerid varchar(50) primary key,password varchar(50));
+create table buying(name varchar(50),buyerid varchar(50) primary key,password varchar(50));
+create table products(productname varchar(50),productid number primary key,startingprice number,finalprice number,description varchar(250),buyerid varchar(50),sellerid varchar(50));
+alter table products add foreign key(buyerid) references buying;
+alter table products add foreign key(sellerid) references selling;
